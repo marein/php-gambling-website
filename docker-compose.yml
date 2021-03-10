@@ -1,7 +1,14 @@
 version: '3.4'
 
+x-php-container-volumes:
+  &php-container-volumes
+    volumes:
+        - ./:/project:delegated
+        - vendor:/project/vendor
+
 x-php-container:
-    &php-container
+  &php-container
+    <<: *php-container-volumes
     build:
         context: .
         dockerfile: ./docker/php-fpm/Dockerfile
@@ -12,10 +19,6 @@ x-php-container:
         - redis
         - rabbit-mq
         - nchan
-    volumes:
-        - ./config:/project/config:delegated
-        - ./src:/project/src:delegated
-        - vendor:/project/vendor
     restart: on-failure
 
 services:
@@ -93,12 +96,6 @@ services:
             - "traefik.frontend.rule=PathPrefix:/"
     php-fpm:
         <<: *php-container
-        volumes:
-            - ./config:/project/config:delegated
-            - ./src:/project/src:delegated
-            - ./tests:/project/tests:delegated
-            - ./var:/project/var:delegated
-            - vendor:/project/vendor
 
     ##############################
     #   Long running processes   #
@@ -132,24 +129,18 @@ services:
     #     Development helper     #
     ##############################
     php:
+        <<: *php-container-volumes
         build:
             context: .
             dockerfile: ./docker/php-fpm/Dockerfile
         entrypoint: docker-php-entrypoint
-        volumes:
-            - ./src:/project/src:delegated
-            - ./tests:/project/tests:delegated
-            - vendor:/project/vendor
     composer:
+        <<: *php-container-volumes
         build:
             context: .
             dockerfile: ./docker/php-fpm/Dockerfile
             target: builder
         entrypoint: docker-php-entrypoint
-        volumes:
-            - ./composer.json:/project/composer.json
-            - ./composer.lock:/project/composer.lock
-            - vendor:/project/vendor
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         environment:
