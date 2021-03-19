@@ -26,6 +26,7 @@
     "doctrine/orm": "^2.8",
     "enqueue/amqp-lib": "^0.10.8",
     "marein/php-nchan-client": "^3.0",
+    "marein/symfony-lock-doctrine-migrations-bundle": "^1.0",
     "marein/symfony-standard-headers-csrf-bundle": "^1.0",
     "predis/predis": "^1.1",
     "psr/log": "^1.1",

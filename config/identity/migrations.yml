@@ -2,3 +2,5 @@ migrations_paths:
     'Gaming\Identity\Port\Adapter\Persistence\Migration': '../../src/Identity/Port/Adapter/Persistence/Migration'
 table_storage:
     table_name: migration_versions
+connection: identity
+all_or_nothing: true

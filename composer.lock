@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e2a9c7bfa638d4e2256766564aaea704",
+    "content-hash": "93400339044438dfc487e0a998b85ec0",
     "packages": [
         {
             "name": "brick/math",
@@ -1949,6 +1949,59 @@
                 "source": "https://github.com/marein/php-nchan-client/tree/3.0.0"
             },
             "time": "2020-11-09T20:45:23+00:00"
+        },
+        {
+            "name": "marein/symfony-lock-doctrine-migrations-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marein/symfony-lock-doctrine-migrations-bundle.git",
+                "reference": "f6be26cb9bb3e08ed9b9858db9517d1d736bfbea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marein/symfony-lock-doctrine-migrations-bundle/zipball/f6be26cb9bb3e08ed9b9858db9517d1d736bfbea",
+                "reference": "f6be26cb9bb3e08ed9b9858db9517d1d736bfbea",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.12",
+                "doctrine/doctrine-bundle": "^2.2",
+                "doctrine/doctrine-migrations-bundle": "^3.0",
+                "php": "^8.0",
+                "symfony/config": "^5.2",
+                "symfony/console": "^5.2",
+                "symfony/dependency-injection": "^5.2",
+                "symfony/http-foundation": "^5.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.81",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.5",
+                "symfony/framework-bundle": "^5.2"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Marein\\LockDoctrineMigrationsBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Markus Reinhold",
+                    "email": "markusreinhold@icloud.com"
+                }
+            ],
+            "description": "Perform concurrent doctrine migrations safely.",
+            "support": {
+                "issues": "https://github.com/marein/symfony-lock-doctrine-migrations-bundle/issues",
+                "source": "https://github.com/marein/symfony-lock-doctrine-migrations-bundle/tree/1.0.0"
+            },
+            "time": "2021-03-17T19:30:16+00:00"
         },
         {
             "name": "marein/symfony-standard-headers-csrf-bundle",

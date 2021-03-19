@@ -6,6 +6,7 @@ x-php-container:
     environment:
         APPLICATION_ENVIRONMENT: prod
         WAIT_FOR: mysql:3306,redis:6379,rabbit-mq:5672,nchan:81
+        RUN_MIGRATIONS: 1
     depends_on:
         - mysql
         - redis

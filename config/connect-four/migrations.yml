@@ -2,3 +2,5 @@ migrations_paths:
     'Gaming\ConnectFour\Port\Adapter\Persistence\Migration': '../../src/ConnectFour/Port/Adapter/Persistence/Migration'
 table_storage:
     table_name: migration_versions
+connection: connect_four
+all_or_nothing: true

@@ -5,6 +5,7 @@ namespace Gaming;
 
 use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle;
+use Marein\LockDoctrineMigrationsBundle\MareinLockDoctrineMigrationsBundle;
 use Marein\StandardHeadersCsrfBundle\MareinStandardHeadersCsrfBundle;
 use Symfony\Bundle\DebugBundle\DebugBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
@@ -25,6 +26,7 @@ final class Kernel extends BaseKernel
             new FrameworkBundle(),
             new DoctrineBundle(),
             new DoctrineMigrationsBundle(),
+            new MareinLockDoctrineMigrationsBundle(),
             new MareinStandardHeadersCsrfBundle(),
             new TwigBundle(),
             new MonologBundle()

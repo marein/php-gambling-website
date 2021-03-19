@@ -7,6 +7,7 @@ x-php-container:
         dockerfile: ./docker/php-fpm/Dockerfile
     environment:
         WAIT_FOR: mysql:3306,redis:6379,rabbit-mq:5672,nchan:81
+        RUN_MIGRATIONS: 1
     depends_on:
         - mysql
         - redis
@@ -135,7 +136,6 @@ services:
         build:
             context: .
             dockerfile: ./docker/php-fpm/Dockerfile
-        entrypoint: ''
         command: 'true'
         volumes:
             - ./src:/project/src:delegated
@@ -146,7 +146,6 @@ services:
             context: .
             dockerfile: ./docker/php-fpm/Dockerfile
             target: builder
-        entrypoint: ''
         command: 'true'
         volumes:
             - ./composer.json:/project/composer.json
